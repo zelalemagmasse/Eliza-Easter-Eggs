@@ -36,6 +36,7 @@ public class Main {
         System.out.println("Good day. What is your problem? Enter your response here or Q to quit");
 
         String respo1 = input.nextLine();
+        int theraphyCounter=1;
         while (!(respo1.equalsIgnoreCase("q"))) {
             if(respo1.equalsIgnoreCase("pig")){
                // System.out.println("this is a test");
@@ -59,6 +60,11 @@ public class Main {
             }
 
             respo1 = input.nextLine();
+            theraphyCounter++;
+            if(theraphyCounter==8) {
+                System.out.println("I think we have had a nice therapy session. you may see me next time soon bye");
+                respo1 = "q";
+            }
         }
     }
     public static String response(String respon) {
