@@ -146,11 +146,13 @@ public class ElizaSupport {
         chatHistoryOfUser.add(userConvers);
     }
     public static String LogHistoryRecord(){
-        String conv=null;
+        StringBuffer convor=new StringBuffer(chatHistoryOfUser.size());
+
         for(int x=0;x<chatHistoryOfUser.size();x++){
-           conv=chatHistoryOfUser.get(x);
+            convor.append(chatHistoryOfUser.get(x).toString());
+
         }
-        return conv.toString();
+        return convor.toString();
     }
 
 }
