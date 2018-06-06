@@ -164,8 +164,20 @@ public class Main {
 
 
     public static String pigSwapper(String nonPig){
-        String firtLetter=nonPig.substring(0,1);
-        String latinPig=nonPig.substring(1,nonPig.length()).concat(firtLetter).concat("ay");
+       char startLetter=nonPig.charAt(0);
+       String latinPig=null;
+       if(startLetter == 'a' || startLetter == 'e' || startLetter == 'i' || startLetter == 'o'
+               || startLetter == 'u'){
+           String vowelpig = nonPig.concat("ay");
+           latinPig=vowelpig;
+
+       }
+       else
+        {
+            String firtLetter = nonPig.substring(0, 1);
+            String convertedPig = nonPig.substring(1, nonPig.length()).concat(firtLetter).concat("ay");
+            latinPig=convertedPig;
+        }
         return latinPig;
     }
     public static void easterEggsPlayGame() {
