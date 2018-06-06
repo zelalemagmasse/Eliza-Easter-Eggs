@@ -2,14 +2,19 @@ package com.company;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Random;
-import java.util.Scanner;
+
 
 public class ElizaSupport {
     private static ArrayList<String> sampleHeges=new ArrayList<>();
     private static ArrayList<String> sampleQualifier=new ArrayList<>();
+    public static List<String> chatHistoryOfUser=new ArrayList<>();
     private static HashMap replacement=new HashMap ();
+    private static HashMap sampleHegesss=new HashMap ();
     public static String response(String respon) {
+
+
 
         sampleHeges.add("please tell me more");
         sampleHeges.add("Many of my patients tell me the same thing");
@@ -135,6 +140,17 @@ public class ElizaSupport {
             latinPig=convertedPig;
         }
         return latinPig;
+    }
+    public static void LogHistory(String userConvers){
+
+        chatHistoryOfUser.add(userConvers);
+    }
+    public static String LogHistoryRecord(){
+        String conv=null;
+        for(int x=0;x<chatHistoryOfUser.size();x++){
+           conv=chatHistoryOfUser.get(x);
+        }
+        return conv.toString();
     }
 
 }
